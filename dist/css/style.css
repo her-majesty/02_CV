@@ -389,11 +389,17 @@ template {
 [hidden] {
   display: none; }
 
+p {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0; }
+
 body {
-  height: 100vh;
+  background-color: #edf4f8;
   font-family: Roboto;
-  color: #313131;
-  margin: 50px; }
+  font-size: 1rem;
+  color: #4e4e4e;
+  padding: 50px; }
 
 section {
   margin-bottom: 100px; }
@@ -428,8 +434,8 @@ section {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid #2c3e50;
+    background-color: #edf4f8;
+    border: 2px solid #2c3e50;
     position: absolute;
     top: -8px; }
   .my-way .ellipse:first-child {
@@ -512,7 +518,11 @@ section {
   background-color: #2c3e50;
   color: white;
   box-sizing: border-box;
+  padding-left: 10px;
   border-left: 5px solid #e64c3c; }
+
+.block-item-name {
+  font-weight: 400; }
 
 .proficiency {
   grid-area: 2 / 1 / 2 / 5; }
@@ -527,16 +537,47 @@ section {
   grid-area: 3 / 1 / 3 / 15;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 5px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-row-gap: 10px;
   grid-column-gap: 5px; }
   .hobbies .block-name {
-    grid-area: 1 / 1 / 1 / 4; }
+    grid-area: 1 / 1 / 1 / 5;
+    position: relative; }
+    .hobbies .block-name:after {
+      content: "";
+      display: block;
+      width: 65px;
+      height: 100%;
+      background-image: url("../img/arrows.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: -14px;
+      top: 0; }
 
 .hobby-pic {
-  height: 100%;
-  border: 1px solid black;
+  height: auto;
   grid-row-start: 2;
-  grid-row-end: 2; }
-  .hobby-pic:first-child {
-    background: url("../img/watching.png"); }
+  grid-row-end: 2;
+  background-image: url("../img/watching.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; }
+  .hobby-pic:nth-of-type(2) {
+    background-image: url("../img/tea.png"); }
+  .hobby-pic:nth-of-type(3) {
+    background-image: url("../img/reading.png"); }
+  .hobby-pic:nth-of-type(4) {
+    background-image: url("../img/habitat.png"); }
+  .hobby-pic:nth-of-type(5) {
+    background-image: url("../img/travel.png"); }
+  .hobby-pic:nth-of-type(6) {
+    background-image: url("../img/listen-music.png"); }
+  .hobby-pic:nth-of-type(7) {
+    background-image: url("../img/design.png"); }
+
+.hobby-name {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  margin: 0 auto; }

@@ -1,13 +1,22 @@
 @import 'normalize';
 
 $blueColor:#2c3e50;
-$redColor:#e64c3c;
+$redColor: #e64c3c;
+$bgColor: #edf4f8;
+$fontColor: #4e4e4e;
+
+p {
+    margin:0;
+    margin-top:10px;
+    padding:0;
+}
 
 body {
-    height:100vh;
+    background-color: $bgColor;
     font-family: Roboto;
-    color:#313131;
-    margin:50px;
+    font-size: 1rem;
+    color:$fontColor;
+    padding:50px;
 }
 
 section {
@@ -47,8 +56,8 @@ font-weight:bold;
         height:20px;
         width:20px;
         border-radius:50%;
-        background-color: #fff;
-        border: 1px solid $blueColor;
+        background-color: $bgColor;
+        border: 2px solid $blueColor;
         position:absolute;
         top:-8px;
     }
@@ -152,7 +161,11 @@ font-weight:bold;
     background-color: $blueColor;
     color:white;
     box-sizing:border-box;
+    padding-left:10px;
     border-left: 5px solid $redColor;
+}
+.block-item-name {
+    font-weight:400;
 }
 .proficiency {
   grid-area: 2 / 1 / 2 / 5;  
@@ -168,21 +181,65 @@ grid-area: 2 / 6 / 2 / 10;
     grid-area: 3 / 1 / 3 / 15;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-row-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 10px;
     grid-column-gap:5px;
-    & .block-name {
-    grid-area: 1 / 1 / 1 / 4;
+        & .block-name {
+    grid-area: 1 / 1 / 1 / 5;
+    position:relative;
+
+    &:after {
+        content:"";
+        display:block;
+        width:65px;
+        height:100%;
+        background-image: url('../img/arrows.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position:absolute;
+        right:-14px;
+        top:0;
+    }
  }
 }
 .hobby-pic {
-height:100%;
-border: 1px solid black;
+height:auto;
 grid-row-start: 2;
 grid-row-end: 2;
+background-image: url('../img/watching.png');
+background-position: center;
+background-size: contain;
+background-repeat: no-repeat;
 
-&:first-child {
-background: url('../img/watching.png');
+&:nth-of-type(2) {
+    background-image: url('../img/tea.png');
+    }
+
+&:nth-of-type(3) {
+    background-image: url('../img/reading.png');
+    }
+
+&:nth-of-type(4) {
+    background-image: url('../img/habitat.png');
+    }
+
+&:nth-of-type(5) {
+    background-image: url('../img/travel.png');
+    }
+
+ &:nth-of-type(6) {
+    background-image: url('../img/listen-music.png');
+    }
+
+&:nth-of-type(7) {
+    background-image: url('../img/design.png');
+    }
 }
+
+.hobby-name {
+    grid-row-start:3;
+    grid-row-end:3;
+    margin: 0 auto;
 }
 
